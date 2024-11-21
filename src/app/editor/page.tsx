@@ -18,8 +18,17 @@ export default function Editor() {
 
   useEffect(() => {
     const storedDocuments = localStorage.getItem("documents");
-    if (storedDocuments) {
+
+    if (storedDocuments && storedDocuments !== "[]") {
       setDocuments(JSON.parse(storedDocuments));
+    } else {
+      const defaultDocument: Document = {
+        id: "introduction",
+        title: "Introduction",
+      };
+      const initialDocuments = [defaultDocument];
+      localStorage.setItem("documents", JSON.stringify(initialDocuments));
+      setDocuments(initialDocuments);
     }
   }, []);
 
