@@ -2,6 +2,7 @@ import { useEditor, EditorContent, JSONContent } from "@tiptap/react";
 import defaultExtension from "./extensions";
 import Dropcursor from "@tiptap/extension-dropcursor";
 import { initialContent } from "./initContent"; // Assuming `initialContent` is imported here
+import ActionMenu from "./components/menus/ActionMenu";
 
 interface Props {
   slug?: string;
@@ -17,6 +18,7 @@ export default function Tiptap({ slug }: Props) {
     <div>
       {editor && (
         <>
+          <ActionMenu editor={editor} />
           <EditorContent editor={editor} />
         </>
       )}

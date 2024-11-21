@@ -93,9 +93,9 @@ export default function ActionMenu(props: ActionMenuProps) {
             onDragEnd={(event: any) => handleDragEnd(event)}
           >
             <div className="flex flex-row">
-              <button className="my-[5px] p-1 hover:bg-slate-100 rounded">
+              {/* <button className="my-[5px] p-1 hover:bg-slate-100 rounded">
                 <IconPlus color="gray" size={20} />
-              </button>
+              </button> */}
               <button
                 id="drag"
                 className="my-[5px] p-1 hover:bg-slate-100 rounded"

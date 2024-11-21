@@ -13,6 +13,24 @@ export const initialContent: JSONContent = {
       ],
     },
     {
+      type: "paragraph",
+      content: [
+        {
+          type: "text",
+          text: "Welcome to lotion editor apps 🖐️. Lotion Editor is a application designed for creating and editing content with ease. This project is a learning experience focused on building an intuitive and feature-rich editor similar to Notion.",
+        },
+      ],
+    },
+    {
+      type: "paragraph",
+      content: [
+        {
+          type: "text",
+          text: "Enjoy my works 😁.",
+        },
+      ],
+    },
+    {
       type: "heading",
       attrs: {
         level: 3,
@@ -30,6 +48,20 @@ export const initialContent: JSONContent = {
         start: 1,
       },
       content: [
+        {
+          type: "listItem",
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                {
+                  type: "text",
+                  text: "Heading",
+                },
+              ],
+            },
+          ],
+        },
         {
           type: "listItem",
           content: [
@@ -67,6 +99,48 @@ export const initialContent: JSONContent = {
                 {
                   type: "text",
                   text: "Youtube",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "listItem",
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                {
+                  type: "text",
+                  text: "Slash Menu",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "listItem",
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                {
+                  type: "text",
+                  text: "Drag Handle",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "listItem",
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                {
+                  type: "text",
+                  text: "Collaboration (coming soon)",
                 },
               ],
             },
