@@ -9,8 +9,7 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50">
       <NavbarMenu />
       <div className="w-full flex justify-center">
-        <Meteors number={10} />
-        <div className="md:mt-24 z-[999]">
+        <div className="mt-24 z-[999]">
           <AnimatedDiv
             className="flex justify-center"
             transition={{ duration: 1.2 }}

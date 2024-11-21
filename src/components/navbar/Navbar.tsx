@@ -31,8 +31,8 @@ function Navbar({ className }: { className?: string }) {
       className={cn(
         "fixed inset-x-0 mx-auto z-50 transition-all duration-500",
         isScrolled
-          ? "w-[40%] mt-[10px] border shadow backdrop-blur-lg rounded-full "
-          : "w-[80%] mt-[-10px]",
+          ? "md:w-[40%] mt-[10px] border shadow backdrop-blur-lg rounded-full "
+          : "md:w-[80%] mt-[-10px]",
         className
       )}
     >

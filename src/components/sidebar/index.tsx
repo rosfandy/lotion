@@ -60,7 +60,7 @@ export default function Sidebar() {
             isSidebarOpen ? "ml-0" : "-ml-[15em]"
           }`}
         >
-          <div className="flex flex-col gap-4 p-4 bg-slate-50 min-h-screen">
+          <div className="flex flex-col gap-4 px-4 py-12 bg-slate-50 min-h-screen">
             {/* Profile Section */}
             <div className="flex items-center gap-x-4">
               <div className="bg-slate-300 p-1 rounded-[40%]">

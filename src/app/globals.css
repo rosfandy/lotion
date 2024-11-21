@@ -507,13 +507,6 @@ ul[data-type="taskList"] li ul[data-type="taskList"] > li {
   white-space: nowrap;
 }
 
-input:focus,
-textarea:focus,
-[tabindex]:focus {
-  outline: none;
-  border: none;
-}
-
 /* Youtube */
 @media not all and (min-width: 769px) {
   .tiptap iframe {

@@ -23,7 +23,9 @@ export default function MenuItem({ uri, text, icon }: MenuProps) {
     <Link
       href={baseUri + uri}
       className={`flex items-center gap-x-2 text-md ${
-        isActive ? "text-blue-500 font-semibold" : "hover:text-blue-500"
+        isActive
+          ? "text-blue-500 font-bold"
+          : "text-[#6b7280] hover:text-blue-500"
       }`}
     >
       {iconWithColor}

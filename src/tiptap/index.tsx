@@ -1,14 +1,16 @@
 import { useEditor, EditorContent, JSONContent } from "@tiptap/react";
 import defaultExtension from "./extensions";
 import Dropcursor from "@tiptap/extension-dropcursor";
+import { initialContent } from "./initContent"; // Assuming `initialContent` is imported here
 
-interface TiptapProps {
-  initialContent?: JSONContent;
+interface Props {
+  slug?: string;
 }
-export default function Tiptap({ initialContent }: TiptapProps) {
+
+export default function Tiptap({ slug }: Props) {
   const editor = useEditor({
     extensions: [...defaultExtension, Dropcursor],
-    content: initialContent || "",
+    content: slug === "introduction" ? initialContent : "", // Conditional content assignment
   });
 
   return (
