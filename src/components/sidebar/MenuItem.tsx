@@ -22,9 +22,9 @@ export default function MenuItem({ uri, text, icon }: MenuProps) {
   return (
     <Link
       href={baseUri + uri}
-      className={`flex items-center gap-x-2 text-md ${
+      className={`flex items-center gap-x-2 text-md p-2 rounded-md ${
         isActive
-          ? "text-blue-500 font-bold"
+          ? "text-blue-500 font-bold bg-blue-100/50"
           : "text-[#6b7280] hover:text-blue-500"
       }`}
     >

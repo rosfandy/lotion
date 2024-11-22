@@ -1,44 +1,28 @@
 "use client";
-import { usePathname } from "next/navigation";
 import Avatar from "../Avatar";
-import MenuItem from "./MenuItem";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import {
-  IconChevronDown,
-  IconFileText,
-  IconHome,
-  IconLogout,
-  IconMenu2,
-  IconSettings,
-  IconX,
-} from "@tabler/icons-react";
+import { IconLogout, IconMenu2, IconX } from "@tabler/icons-react";
 import AnimatedDiv from "../AnimatedDiv";
+import Navigation from "./navigation";
 import Link from "next/link";
 
 export default function Sidebar() {
-  const pathname = usePathname();
-  const name = "Anonymous";
   const [documents, setDocuments] = useState<
     { id: string; title: string }[] | null
   >(null);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [name, setName] = useState<string>("Anonymous");
 
   useEffect(() => {
     const storedDocuments = localStorage.getItem("documents");
-    if (storedDocuments) {
-      setDocuments(JSON.parse(storedDocuments));
-    }
+    const storedName = localStorage.getItem("name");
+    storedDocuments ? setDocuments(JSON.parse(storedDocuments)) : null;
+    storedName ? setName(storedName) : null;
   }, []);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev);
-  };
 
   return (
     <div
-      className={`fixed lg:w-[15%] shadow z-[100] ${
+      className={`fixed lg:w-[15%] shadow z-[90] border ${
         isSidebarOpen ? "" : "ml-[0em]"
       } transition-all duration-300`}
     >
@@ -73,55 +57,8 @@ export default function Sidebar() {
                 </div>
               </div>
             </div>
-
             {/* Menu Section with Navigation Links */}
-            <div className="mt-8 flex flex-col gap-y-4 px-2 text-gray-500">
-              <MenuItem uri="" text="Home" icon={<IconHome size={24} />} />
-              <div>
-                <div
-                  onClick={toggleDropdown}
-                  className="w-full text-left text-lg hover:text-blue-500 flex gap-x-2 items-center justify-between cursor-pointer"
-                >
-                  <div className="flex gap-x-2">
-                    <IconFileText size={24} color="#6b7280" />
-                    <div className="text-gray-500 text-[16px]">Documents</div>
-                  </div>
-                  <IconChevronDown size={20} color="#6b7280" />
-                </div>
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{
-                    opacity: isDropdownOpen ? 1 : 0,
-                    height: isDropdownOpen ? "auto" : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
-                >
-                  <div className="pl-4 my-2 flex flex-col gap-y-2">
-                    {documents && documents.length > 0 ? (
-                      documents.map((doc) => (
-                        <MenuItem
-                          key={doc.id}
-                          text={doc.id}
-                          uri={`/docs/${doc.id}`}
-                          icon={<IconFileText size={20} />}
-                        />
-                      ))
-                    ) : (
-                      <div className="text-gray-500 text-sm">
-                        No documents exist
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              </div>
-
-              <MenuItem
-                uri="/setting"
-                text="Setting"
-                icon={<IconSettings size={24} className="" />}
-              />
-            </div>
+            <Navigation documents={documents || []} />
             <Link href="/" className="flex items-center gap-x-2 mt-auto">
               <div className="text-[#6b7280]">Logout</div>
               <IconLogout size={24} color="#6b7280" />

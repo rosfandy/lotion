@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/tiptap/extensions/index.js"
+    "src/tiptap/extensions/index.ts"
   ],
   "exclude": [
     "node_modules"

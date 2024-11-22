@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Breadcrumb from "@/components/breadcrumb";
 import DocumentForm from "@/components/form";
 import { AnimatePresence } from "framer-motion";
-import { IconFileText } from "@tabler/icons-react";
+import { IconFileFilled } from "@tabler/icons-react";
 import Link from "next/link";
 import AnimatedDiv from "@/components/AnimatedDiv";
 
@@ -72,7 +72,7 @@ export default function Editor() {
                       className="border p-4 lg:w-[20%] md:w-[40%] w-full gap-y-2 flex flex-col cursor-pointer hover:shadow transition-all duration-300 ease-in-out"
                       key={doc.id}
                     >
-                      <IconFileText color="#3b82f6" size={32} />
+                      <IconFileFilled color="#3b82f6" size={32} />
                       <div className="">
                         <div className="font-bold">{doc.id}</div>
                         <div className="">{doc.title}</div>
