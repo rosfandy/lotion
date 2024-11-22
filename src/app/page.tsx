@@ -1,6 +1,5 @@
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { NavbarMenu } from "@/components/navbar/Navbar";
-import { Meteors } from "@/components/ui/Meteors";
 import Image from "next/image";
 import Link from "next/link";
 
