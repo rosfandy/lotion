@@ -11,6 +11,7 @@ import Paragraph from "@tiptap/extension-paragraph";
 import Heading from "@tiptap/extension-heading";
 import CodeBlock from "@tiptap/extension-code-block";
 import Youtube from "./youtube";
+import History from "@tiptap/extension-history";
 
 const defaultExtension = [
   CodeBlock,
@@ -18,6 +19,7 @@ const defaultExtension = [
   Heading.configure({
     levels: [1, 2, 3],
   }),
+  History,
   ListItem,
   OrderedList.configure({
     HTMLAttributes: {
@@ -27,7 +29,7 @@ const defaultExtension = [
   Title,
   Paragraph,
   Placeholder.configure({
-    placeholder: ({ node }) => {
+    placeholder: ({ node }: any) => {
       let text = "Write something … or type '/' to choose block";
       switch (node.type.name) {
         case "title":
